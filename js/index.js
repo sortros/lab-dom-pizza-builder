@@ -120,12 +120,50 @@ function renderButtons() {
 
 function renderPrice() {
   // Iteration 4: change the HTML of `<aside class="panel price">`
-  if (state.pepperoni) {
+  /*if (state.pepperoni) {
     document.querySelector('.price.pepperoni').style.color = "black";
     //document.querySelector('.panel.price')
   } else {
     document.querySelector('.price.pepperoni').style.color = "white";
+  } */
+  let suma = 10;
+  if (state.pepperoni) {
+    document.querySelector('.price.pepperoni').style.display = ("list-item");
+    //document.querySelector('.panel.price')
+    suma = suma + 1;
+  } else {
+    document.querySelector('.price.pepperoni').style.display = ("none");
   } 
+  if (state.mushrooms) {
+    document.querySelector('.price.mushrooms').style.display = ("list-item");
+    //document.querySelector('.panel.price')
+    suma = suma + 1;
+  } else {
+    document.querySelector('.price.mushrooms').style.display = ("none");
+  } 
+  if (state.greenPeppers) {
+    document.querySelector('.price.greenpeppers').style.display = ("list-item");
+    //document.querySelector('.panel.price')
+    suma = suma + 1;
+  } else {
+    document.querySelector('.price.greenpeppers').style.display = ("none");
+  } 
+  if (state.whiteSauce) {
+    document.querySelector('.price.whitesauce').style.display = ("list-item");
+    //document.querySelector('.panel.price')
+    suma = suma + 3;
+  } else {
+    document.querySelector('.price.whitesauce').style.display = ("none");
+  } 
+  if (state.glutenFreeCrust) {
+    document.querySelector('.price.glutenfreecrust').style.display = ("list-item");
+    //document.querySelector('.panel.price')
+    suma = suma + 5;
+  } else {
+    document.querySelector('.price.glutenfreecrust').style.display = ("none");
+  }  
+  //document.querySelector('.total.price').innerText =  
+  document.querySelector('strong.total.price').innerText = "$" + suma ;
 }
 
 renderEverything();
